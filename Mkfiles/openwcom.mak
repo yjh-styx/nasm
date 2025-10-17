@@ -161,7 +161,7 @@ ZLIBOBJ = &
 
 LIBOBJ    = $(LIBOBJ_W) $(LIBOBJ_NW) $(ZLIB)
 ALLOBJ_W  = $(NASM) $(LIBOBJ_W)
-ALLOBJ    = $(PROGOBJ) $(LIBOBJ)
+ALLOBJ    = $(PROGOBJ) $(LIBOBJ) $(LIBOBJ_DIS)
 SUBDIRS  = stdlib nasmlib include config output asm disasm x86 &
 	   common zlib macros misc
 XSUBDIRS = nsis win test doc editors
@@ -404,6 +404,7 @@ clean: .SYMBOLIC
     rm -f stdlib\*.obj stdlib\*.s stdlib\*.i
     rm -f nasmlib\*.obj nasmlib\*.s nasmlib\*.i
     rm -f disasm\*.obj disasm\*.s disasm\*.i
+    rm -f zlib\*.obj zlib\*.s zlib\*.i
     rm -f config.h config.log config.status
     rm -f nasm$(X) ndisasm$(X) $(NASMLIB) $(NDISLIB)
 
